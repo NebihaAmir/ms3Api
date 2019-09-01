@@ -1,0 +1,72 @@
+#%RAML 0.8
+title: Sample API
+/user:
+  get:    
+    queryParameters:
+      /{id}:        
+    description: "getting user using user id"
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+                {
+                  "data": {
+                    "id": "1",
+                    "firsname": "John",
+                    "lastname": null,
+                    "dob": 1341533193,
+                    "gender": "M",
+                    "title": "Programmer",
+                    
+                  },
+                  "success": true,
+                  "status": 200
+                }
+  post: 
+    responses:                
+      200:
+        body:
+          application/json:
+            example: |
+                {
+                  "data": {
+                    "id": "1",
+                    "firsname": "Peter",
+                    "lastname": John,
+                    "dob": 134193,
+                    "gender": "F",
+                    "title": "Developer",
+                    
+                  },
+                  "success": true,
+                  "status": 200
+                } 
+                
+  delete:    
+    queryParameters:
+      /{id}:        
+    description: "deleting user"
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+                {
+                  "data": {
+                    "id": "1",
+                    "firsname": "John",
+                    "lastname": null,
+                    "dob": 1341533193,
+                    "gender": "M",
+                    "title": "Programmer",
+                    
+                  },
+                  "success": true,
+                  "status": 200
+                }  
+                
+      400:  
+        body: 
+          application/json: 
+            example: "user not found"                                  
